@@ -16,11 +16,11 @@ var Mandelbrot = new (function ()
 		for (var i = 0; i < max; i += 1) {
 			coord = self.point(coord, z);
 
-			if (coord[0] > 2 || coord[0] < -2 || coord[1] > 2 || coord[1] < -2) {
-				return false;
+			if (coord[0] >= 2 || coord[0] <= -2 || coord[1] >= 2 || coord[1] <= -2) {
+				return i;
 			}
 		}
 
-		return true;
+		return max;
 	};
 });
