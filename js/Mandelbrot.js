@@ -18,11 +18,11 @@ var Mandelbrot = new (function ()
 			coord = self.point(coord, z);
 			distance = Math.sqrt(Math.pow(coord[0], 2) + Math.pow(coord[1], 2));
 
-			if (distance > 2) {
-				return i;
+			if (distance > 200) {
+				return i / max;
 			}
 		}
 
-		return max;
+		return 1;
 	};
 });
