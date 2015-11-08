@@ -11,12 +11,14 @@ var Mandelbrot = new (function ()
 	};
 
 	self.iterate = function (z, max) {
-		var coord = self.point(z, z);
+		var coord = self.point([0, 0], z);
+		var distance;
 
 		for (var i = 0; i < max; i += 1) {
 			coord = self.point(coord, z);
+			distance = Math.sqrt(Math.pow(coord[0], 2) + Math.pow(coord[1], 2));
 
-			if (coord[0] >= 2 || coord[0] <= -2 || coord[1] >= 2 || coord[1] <= -2) {
+			if (distance > 2) {
 				return i;
 			}
 		}

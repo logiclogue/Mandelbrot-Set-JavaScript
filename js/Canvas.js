@@ -21,7 +21,7 @@ var Canvas = new (function ()
 
 		for (var x = 0, maxX = window.innerWidth; x < maxX; x += 1) {
 			for (var y = 0, maxY = window.innerHeight; y < maxY; y += 1) {
-				self.ctx.globalAlpha = 1 - Mandelbrot.iterate([(x / scaleX) + xPos - 2, (y / scaleY) + yPos - 2], 255) / 255;
+				self.ctx.globalAlpha = 1 - Mandelbrot.iterate([(x / scaleX) + xPos - 2, (y / scaleY) + yPos - 2], 50) / 50;
 				self.ctx.fillRect(x, y, 1, 1);
 			}
 		}
