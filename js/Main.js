@@ -1,5 +1,5 @@
 window.addEventListener("load", function ()
 {
 	Canvas.set('canvas-mandelbrot');
-	Canvas.draw(0, 0, 4, 256);
+	Canvas.draw(-1.75, 0, 0.1, 256);
 });
