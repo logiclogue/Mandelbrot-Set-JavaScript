@@ -4,6 +4,7 @@ var Canvas = new (function ()
 	
 	self.canvas;
 	self.ctx;
+	self.imgData;
 
 
 	self.set = function (canvasId) {
@@ -42,5 +43,11 @@ var Canvas = new (function ()
 				self.ctx.fillRect(x, y, 1, 1);
 			}
 		}
+
+		self.imgData = self.ctx.getImageData(0, 0, self.canvas.width, self.canvas.height);
+	};
+
+	self.move = function (x, y) {
+		self.ctx.putImageData(self.imgData, x, y);
 	};
 });
