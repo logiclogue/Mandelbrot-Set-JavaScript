@@ -6,6 +6,11 @@ var Canvas = new (function ()
 	self.ctx;
 	self.imgData;
 
+	self.x = 0;
+	self.y = 0;
+	self.scale = 4;
+	self.iterations = 10;
+
 
 	self.set = function (canvasId) {
 		self.canvas = document.getElementById(canvasId);
@@ -16,11 +21,11 @@ var Canvas = new (function ()
 	};
 
 	self.draw = function (x, y, scale, iterations) {
-		scale = scale || 4;
-		iterations = iterations || 10;
-		x = x || 0;
-		y = y || 0;
-		1
+		x = x || self.x;
+		y = y || self.y;
+		scale = scale || self.scale;
+		iterations = iterations || self.iterations;
+		
 		var scaleX = self.canvas.height / scale;
 		var scaleY = self.canvas.height / scale;
 		var xPos = x - scale / 2;
