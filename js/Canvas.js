@@ -12,6 +12,11 @@ var Canvas = new (function ()
 	self.iterations = 10;
 
 
+	function drawCanvas() {
+		self.imgData = self.ctx.getImageData(0, 0, self.canvas.width, self.canvas.height);
+	}
+
+
 	self.set = function (canvasId) {
 		self.canvas = document.getElementById(canvasId);
 		self.ctx = self.canvas.getContext('2d');
@@ -49,10 +54,11 @@ var Canvas = new (function ()
 			}
 		}
 
-		self.imgData = self.ctx.getImageData(0, 0, self.canvas.width, self.canvas.height);
+		drawCanvas();
 	};
 
 	self.move = function (x, y) {
+		self.ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
 		self.ctx.putImageData(self.imgData, x, y);
 	};
 });
