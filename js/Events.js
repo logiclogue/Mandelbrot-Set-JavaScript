@@ -1,4 +1,5 @@
-var Events = new (function () {
+var Events = new (function ()
+{
 	var self = this;
 
 	self.startX;
