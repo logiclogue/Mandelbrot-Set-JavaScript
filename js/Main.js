@@ -1,4 +1,4 @@
-window.addEventListener("load", function ()
+window.onload = function ()
 {
 	Canvas.set('canvas-mandelbrot');
 	Canvas.x = -1.75;
@@ -7,4 +7,4 @@ window.addEventListener("load", function ()
 	Canvas.iterations = 256;
 	Canvas.draw();
 	Events.init();
-});
+};
